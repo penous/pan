@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block content %}
+    <form class="form-custom" method="post">
+        {{ form.hidden_tag() }}
+        <h1 class="border-bottom h3 mb-3 font-weight-normal">Add A New Sandwich</h1>
+            {{ form.shop.label(class="sr-only") }}
+            {{ form.shop(class="form-control form-control-lg shop-select", placeholder="Shop") }}
+            {{ form.name.label(class="sr-only") }}
+            {{ form.name(class="form-control form-control-lg", placeholder="Name") }}
+            {{ form.price.label(class="sr-only") }}
+            {{ form.price(class="form-control form-control-lg", placeholder="Price") }}
+            {{ form.submit(class="btn btn-lg btn-primary btn-block") }}
+    </form>
+{% endblock %}

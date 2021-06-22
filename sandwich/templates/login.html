@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block content %}
+    <form class="form-custom" method="post">
+        {{ form.hidden_tag() }}
+        <img class="mb-4" src="{{ url_for('static', filename='logo/sandwich_2.png') }}" alt="" width="200" height="200">
+        <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+    
+            {{ form.email.label(class="sr-only") }}
+            {{ form.email(class="form-control form-control-lg", placeholder="Email") }}
+            {{ form.password.label(class="sr-only") }}
+            {{ form.password(class="form-control form-control-lg", placeholder="Password") }}
+        <div class="checkbox mb-3">
+            {{ form.remember(class="form-check-input") }}
+            {{ form.remember.label(class="form-check-label") }}
+        </div>
+            {{ form.submit(class="btn btn-lg btn-primary btn-block") }}
+    </form>
+{% endblock %}

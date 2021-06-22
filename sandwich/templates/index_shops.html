@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<a class="btn btn-primary m-2" href="{{ url_for('send_orders') }}">
+    <div>Verstuur Orders</div>
+</a>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            {% for field in fields %}
+                <th scope="col">{{ field }}</th>
+            {% endfor %}
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for shop in shops %}
+            <tr class="clickable-row" data-url="{{ url_for('update_shop', shop_id=shop.id) }}">
+                    <th scope="row">{{ loop.index0 }}</th>
+                    <td>{{ shop.id }}</td>
+                    <td>{{ shop.name }}</td>
+                    <td>{{ shop.email }}</td>
+                    <td>{{ shop.shop_of_the_day }}</td>
+                    <td><a class="badge badge-danger" href="{{ url_for('delete_shop', shop_id=shop.id) }}">Delete Shop</a></td>
+            </tr>
+        {% endfor %}
+    </tbody>
+    </table>
+{% endblock %}

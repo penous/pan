@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block content %}
+    <form class="form-custom" method="post">
+        {{ form.hidden_tag() }}
+        <h1 class="border-bottom h3 mb-3 font-weight-normal">{{ legend }}</h1>
+    
+            {{ form.name.label(class="sr-only") }}
+            {{ form.name(class="form-control form-control-lg", placeholder="Name") }}
+            {{ form.email.label(class="sr-only") }}
+            {{ form.email(class="form-control form-control-lg", placeholder="Email") }}
+        <div class="checkbox mb-3">
+            {{ form.shop_of_the_day(class="form-check-input") }}
+            {{ form.shop_of_the_day.label(class="form-check-label") }}
+        </div>
+            {{ form.submit(class="btn btn-lg btn-primary btn-block") }}
+    </form>
+{% endblock %}

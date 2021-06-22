@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block content %}
+    <form class="form-custom" method="post">
+        {{ form.hidden_tag() }}
+        <h1 class="border-bottom h3 mb-3 font-weight-normal">Order Your Sandwich</h1>
+        <h3 class="h3 mb-3 font-weight-normal">{{ shop }}</h3>
+            {{ form.sandwich.label(class="sr-only") }}
+            {{ form.sandwich(class="form-control form-control-lg shop-select", placeholder="Sandwich") }}
+            {{ form.comment.label(class="sr-only") }}
+            {{ form.comment(class="form-control form-control-lg shop-select", placeholder="Comments, allergies or a just a joke...") }}
+            {{ form.submit(class="btn btn-lg btn-primary btn-block") }}
+    </form>
+{% endblock %}
