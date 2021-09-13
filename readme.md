@@ -2,7 +2,7 @@
 
 exercise to create a fiction website for a sandwich shop.
 
-### technologies used
+## technologies used
 
 language: Python
 Framework: Flask
